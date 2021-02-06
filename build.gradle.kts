@@ -20,15 +20,22 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation("junit:junit:4.13")
+    // // Use JUnit test framework.
+    // testImplementation("junit:junit:4.13")
 
-    // This dependency is used by the application.
-    implementation("com.google.guava:guava:29.0-jre")
+    // // This dependency is used by the application.
+    // implementation("com.google.guava:guava:29.0-jre")
 }
 
 javafx {
-    modules("javafx.controls", "javafx.fxml")
+    version = "11"
+    modules("javafx.base", "javafx.controls", "javafx.fxml", "javafx.graphics")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
 
 tasks.compileJava {
